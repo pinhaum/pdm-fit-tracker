@@ -33,6 +33,18 @@ const globalStyles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
   },
+  summary: {
+    marginTop: 20,
+    fontSize: 14,
+    backgroundColor: "#f9f9f9",
+    padding: 10,
+    borderRadius: 5,
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "semibold",
+    marginTop: 10,
+  },
   button: {
     height: 32,
     padding: 4,

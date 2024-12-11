@@ -56,6 +56,7 @@ export default function _new() {
         }
       />
 
+      <Text style={globalStyles.label}>Preencha quantidade de séries</Text>
       <TextInput
         style={globalStyles.input}
         placeholder="Preencha a quantidade de séries"
@@ -66,6 +67,9 @@ export default function _new() {
         }
       />
 
+      <Text style={globalStyles.label}>
+        Preencha a quantidade de repetições
+      </Text>
       <TextInput
         style={globalStyles.input}
         placeholder="Preencha a quantidade de repetições"
