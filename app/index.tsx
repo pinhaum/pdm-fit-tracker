@@ -56,13 +56,13 @@ export default function _screen() {
         }}
         style={{ marginTop: 12 }}
       />
-      <StyledButton
+      {/* <StyledButton
         title="Register"
         onPress={() => {
           router.push("/register/");
         }}
         style={{ marginTop: 12, backgroundColor: "green" }}
-      />
+      /> */}
     </View>
   );
 }

@@ -26,6 +26,13 @@ const globalStyles = StyleSheet.create({
     width: "100%",
     marginTop: 12,
   },
+  summary: {
+    marginTop: 20,
+    fontSize: 14,
+    backgroundColor: "#f9f9f9",
+    padding: 10,
+    borderRadius: 5,
+  },
   button: {
     height: 32,
     padding: 4,
