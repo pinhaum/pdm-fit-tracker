@@ -46,7 +46,7 @@ export default function _screen() {
             await login(email, password);
             router.push("/home/");
           } catch (error: any) {
-            console.error(error.toString());
+            // console.error(error.toString());
             Alert.alert(
               "Login error",
               "Ocorreu algo de errado ao realizar o login, cheque seu email e senha"

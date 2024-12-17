@@ -9,6 +9,7 @@ import Loading from "../../../components/Loading";
 import StyledButton from "../../../components/StyledButton";
 import { Timestamp } from "firebase/firestore";
 import { assertScreens } from "expo-router/build/fork/getStateFromPath-forks";
+import convertTimestamp from "../../../helpers/convertTimestamp";
 
 export default function _screen() {
   const { id } = useGlobalSearchParams();
@@ -29,15 +30,32 @@ export default function _screen() {
           headerRight: () => <HeaderOptions showEmail={false} />,
         }}
       />
-
-      <Text>Data: {trainingSession.sessionDate.toLocaleString()}</Text>
-      {trainingSession.exercises.map((exercise) => (
-        <View key={exercise.name}>
-          <Text>Exercise: {exercise.name}</Text>
-          <Text>Sets: {exercise.sets}</Text>
-          <Text>Repetitions: {exercise.repetitions}</Text>
-        </View>
-      ))}
+      <View style={{ margin: 12 }}>
+        <Text>
+          Data:{" "}
+          {convertTimestamp(
+            trainingSession.sessionDate as unknown as Timestamp
+          )}
+        </Text>
+        <Text>Exercises:</Text>
+        {trainingSession.exercises.map((exercise, index) => (
+          <View
+            key={index}
+            style={{
+              marginLeft: 12,
+              marginBottom: 6,
+              borderColor: "#478ECC",
+              borderBottomWidth: 1,
+            }}
+          >
+            <Text>
+              Exercise {index + 1}: {exercise.name}
+            </Text>
+            <Text>Sets: {exercise.sets}</Text>
+            <Text>Repetitions: {exercise.repetitions}</Text>
+          </View>
+        ))}
+      </View>
 
       <StyledButton
         title="Random Update"
@@ -46,6 +64,14 @@ export default function _screen() {
             await upsert({
               ...trainingSession,
               sessionDate: new Date(),
+              // exercises: [
+              //   ...trainingSession.exercises,
+              //   {
+              //     name: "New Exercise",
+              //     sets: 0,
+              //     repetitions: 0,
+              //   },
+              // ],
             });
           } catch (error: any) {
             Alert.alert("Update Book error", error.toString());

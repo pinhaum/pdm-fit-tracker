@@ -3,6 +3,8 @@ import React from "react";
 import StyledButton from "./StyledButton";
 import TrainingSession from "../types/TrainingSession";
 import { useRouter } from "expo-router";
+import convertTimestamp from "../helpers/convertTimestamp";
+import { Timestamp } from "firebase/firestore";
 
 interface ViewTrainingSessionProps {
   trainingSession: TrainingSession;
@@ -17,9 +19,12 @@ export default function ViewTrainingSession({
 
   return (
     <View
-      style={{ borderTopColor: "darkblue", borderTopWidth: 1, marginTop: 12 }}
+      style={{ borderTopColor: "#478ECC", borderTopWidth: 1, marginTop: 12 }}
     >
-      <Text>Data: {trainingSession.sessionDate.toString()}</Text>
+      <Text>
+        Data:{" "}
+        {convertTimestamp(trainingSession.sessionDate as unknown as Timestamp)}
+      </Text>
       {trainingSession.exercises.map((exercise) => (
         <View key={exercise.name}>
           <Text>Exercise: {exercise.name}</Text>
@@ -68,7 +73,7 @@ export default function ViewTrainingSession({
               );
             }
           }}
-          style={{ width: "50%", backgroundColor: "darkred" }}
+          style={{ width: "50%", backgroundColor: "#F04438" }}
         />
       </View>
     </View>

@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const theme = {
-  primaryColor: "darkblue",
+  primaryColor: "#478ECC",
   defaultRadius: 8,
 };
 
@@ -21,7 +21,7 @@ const globalStyles = StyleSheet.create({
     height: 32,
     borderWidth: 1,
     padding: 4,
-    borderColor: "darkblue",
+    borderColor: "#478ECC",
     borderRadius: theme.defaultRadius,
     width: "100%",
     marginTop: 12,
@@ -41,7 +41,7 @@ const globalStyles = StyleSheet.create({
   button: {
     height: 32,
     padding: 4,
-    backgroundColor: "darkblue",
+    backgroundColor: "#478ECC",
     borderRadius: theme.defaultRadius,
     width: "100%",
   },

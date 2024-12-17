@@ -56,7 +56,7 @@ export default function _new() {
         }
       />
 
-      <Text style={globalStyles.label}>Preencha quantidade de séries</Text>
+      <Text style={globalStyles.label}>Preencha a quantidade de séries</Text>
       <TextInput
         style={globalStyles.input}
         placeholder="Preencha a quantidade de séries"
@@ -83,7 +83,7 @@ export default function _new() {
       <StyledButton
         title="Adicionar Exercício"
         onPress={handleAddExercise}
-        style={{ marginTop: 12, backgroundColor: "darkgreen" }}
+        style={{ marginTop: 12, backgroundColor: "#8AC44B" }}
       />
 
       <TextInput
