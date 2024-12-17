@@ -12,9 +12,9 @@ export default function Home() {
   const { data, remove, refreshData, loading } =
     useCollection<TrainingSession>(`trainingSessions`);
 
-  data.forEach((trainingSession) => {
-    console.log(trainingSession);
-  });
+  // data.forEach((trainingSession) => {
+  //   console.log(trainingSession.sessionDate);
+  // });
 
   return (
     <View style={globalStyles.container}>
