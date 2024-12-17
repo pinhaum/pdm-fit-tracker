@@ -44,7 +44,6 @@ export default function _screen() {
         onPress={async () => {
           try {
             await login(email, password);
-            console.log("push to home");
             router.push("/home/");
           } catch (error: any) {
             console.error(error.toString());

@@ -103,23 +103,12 @@ export default function _new() {
       <StyledButton
         title="Finalizar"
         onPress={() => {
-          console.log(trainingSession);
+          // console.log(trainingSession);
           trainingSessionCollection.create(trainingSession);
           router.push("/home/");
         }}
         style={{ marginTop: 12 }}
       />
-      {/* <TextInput
-        style={globalStyles.input}
-        value={email}
-        onChangeText={setEmail}
-      />
-      <TextInput
-        style={globalStyles.input}
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      /> */}
     </View>
   );
 }
