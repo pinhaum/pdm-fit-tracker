@@ -64,14 +64,14 @@ export default function _screen() {
             await upsert({
               ...trainingSession,
               sessionDate: new Date(),
-              // exercises: [
-              //   ...trainingSession.exercises,
-              //   {
-              //     name: "New Exercise",
-              //     sets: 0,
-              //     repetitions: 0,
-              //   },
-              // ],
+              exercises: [
+                ...trainingSession.exercises,
+                {
+                  name: "New Exercise",
+                  sets: 0,
+                  repetitions: 0,
+                },
+              ],
             });
           } catch (error: any) {
             Alert.alert("Update Book error", error.toString());
